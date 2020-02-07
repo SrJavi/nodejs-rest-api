@@ -2,8 +2,7 @@ import express from 'express'
 import morgan from 'morgan';
 import cors from 'cors';
 
-import postRoutes from './routes/post.router'
-import authRoutes from './routes/auth.router'
+import routes from './routes'
 
 const app = express();
 
@@ -17,7 +16,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 // Routes
-app.use('/api', postRoutes);
-app.use('/', authRoutes);
+app.use('/', routes);
 
 export default app;
